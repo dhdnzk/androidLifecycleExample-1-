@@ -8,16 +8,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Bundle
+
      * 액티비티가 파괴되고 새로 생길때마다, 메모리상에 저장되어 있는 내부 값들이 삭제된다.(백그라운드로 전환한 뒤 OS에 의해 파괴, 화면 회전 등)
      * pause나 stop상태일때는 언제든지 앱이 강제 종료될 수 있는 위험한 상황이므로, 수명주기에 대응할 수 있는 장치를 두는것이 필요하다.
      * Bundle 객체와 onSavedStatement()메소드(onPause, onStop 사이에 호출됨)
      * Preference나 SQLite등을 통해 데이터를 영구적으로 저장하는것 까지는 아니지만 수명주기에 잘 대응할 수 있도록 반 영구적인 데이터 보존이 필요할 때 사용.
-
-     * AsyncTaskLoader
-     * AsyncTask등을 통해 백그라운드에서 작업을 진행하고 있는 도중에 화면 회전 등의 이벤트가 발생해서 액티비티가 파괴된다면
-     * 백그라운드에서 작업중인 스레드가 좀비 액티비티에 값을 반환해줘야 하기 때문에 Activity자원을 붙잡고 있게된다.
-     * 이를 해결하기 위해 액티비티의 수명주기와는 별도로 움직이는 Loader패턴이 필요하다.
-     *
      */
 
     TextView textView;
